@@ -1,0 +1,3 @@
+[submodule "words_repo"]
+	path = words_repo
+	url = https://github.com/konsheng/Sensitive-lexicon.git

@@ -1,0 +1,25 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Model artifacts
+datasets/model_v4/
+
+# IDE
+.trae/
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jieba cache
+jieba.cache
