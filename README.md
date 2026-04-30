@@ -18,7 +18,7 @@
 
 ```bash
 # 克隆（含词表子模块）
-git clone --recurse-submodules https://github.com/<your-repo>/Cato.git
+git clone --recurse-submodules https://github.com/CuzTeam/Cato.git
 cd Cato
 
 # 安装依赖
