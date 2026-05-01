@@ -5,27 +5,19 @@ POST /batch   - 批量检测
 GET  /health  - 健康检查
 """
 
-from contextlib import asynccontextmanager
-
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 from main import CatoModel, load_lexicon
 
+lexicon = load_lexicon()
 model = CatoModel()
+if not model.load():
+    raise RuntimeError("模型文件不存在，请先运行 main.py 训练模型")
+model.lexicon = lexicon
+print("模型加载完成")
 
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    lexicon = load_lexicon()
-    if not model.load():
-        raise RuntimeError("模型文件不存在，请先运行 main.py 训练模型")
-    model.lexicon = lexicon
-    print("模型加载完成")
-    yield
-
-
-app = FastAPI(title="Cato", version="0.1.0", lifespan=lifespan)
+app = FastAPI(title="Cato", version="0.1.0")
 
 
 class DetectRequest(BaseModel):
