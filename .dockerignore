@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.trae/
+.idea/
+.vscode/
+.git/
+datasets/model_v3/
+jieba.cache
+*.egg-info
